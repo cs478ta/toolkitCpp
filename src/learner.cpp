@@ -31,7 +31,7 @@ double SupervisedLearner::measureAccuracy(Matrix& features, Matrix& labels, Matr
 	size_t labelValues = labels.valueCount(0);
 	if(labelValues == 0) // If the label is continuous...
 	{
-		// The label is continuous, so measure root mean squared error
+		// The label is continuous, so measure mean squared error
 		vector<double> pred;
 		pred.resize(1);
 		double sse = 0.0;
@@ -44,7 +44,7 @@ double SupervisedLearner::measureAccuracy(Matrix& features, Matrix& labels, Matr
 			double delta = targ[0] - pred[0];
 			sse += (delta * delta);
 		}
-		return sqrt(sse / features.rows());
+		return sse / features.rows();
 	}
 	else
 	{

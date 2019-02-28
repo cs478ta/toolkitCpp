@@ -26,7 +26,7 @@ public:
 
 	// The model must be trained before you call this method. If the label is nominal,
 	// it returns the predictive accuracy. If the label is continuous, it returns
-	// the root mean squared error (RMSE). If pOutStats is non-NULL, and the
+	// the mean squared error (MSE). If pOutStats is non-NULL, and the
 	// output label is nominal, then pOutStats will be resized and set to
 	// contain stats about the frequency of correct predictions with each label.
 	double measureAccuracy(Matrix& features, Matrix& labels, Matrix* pOutStats = NULL);

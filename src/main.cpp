@@ -303,7 +303,7 @@ void doit(ArgParser& parser)
 		labels.copyPart(dataset, 0, dataset.cols() - labelDims, dataset.rows(), labelDims);
 		double accuracy = learner->crossValidate(1, folds, features, labels, r, true);
 		if(labels.valueCount(0) == 0)
-			cout << "Root Mean Squared Error: " << accuracy << "\n";
+			cout << "Mean Squared Error: " << accuracy << "\n";
 		else
 			cout << "Mean predictive accuracy: " << accuracy << "\n";
 		cout.flush();
