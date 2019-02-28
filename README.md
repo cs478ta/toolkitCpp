@@ -6,7 +6,9 @@ will classify each instance as the majority class.  You can use that class as
 example to create new learning algorithms.
 
 ## Build Instructions for Linux:
-1. Unizp the zip file
+1. Clone the repo
+
+   ```git clone https://github.com/cs478ta/toolkitCpp.git```
 2. Install g++ and make. (These packages may already be installed)
    
    ```sudo aptitude install g++ make```
@@ -19,6 +21,15 @@ example to create new learning algorithms.
 5. To run it, go into the bin folder
        cd ../bin
        and follow the usage instructions
+
+To test the toolkit, navigate to the project root directory and run:
+```
+mkdir datasets
+cd datasets/
+wget http://axon.cs.byu.edu/~martinez/classes/478/stuff/iris.arff
+cd ..
+./bin/MLSystemManager -L baseline -A datasets/iris.arff -E training
+```
 
 ## Build Instructions for Windows:
 1. Download and install Microsoft Visual Studio 2008 Express Edition
